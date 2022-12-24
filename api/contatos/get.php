@@ -3,9 +3,9 @@
 
   if ($acao === "listar" && $params === "") {
     $db = DB::connect();
-    $script = $db->prepare("SELECT * FROM tblcontatos");
-    $script->execute();
-    $result = $script->fetchAll(PDO::FETCH_ASSOC);
+    $sql = $db->prepare("SELECT * FROM tblcontatos");
+    $sql->execute();
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     if ($result) {
       echo json_encode(["dados" => $result]);

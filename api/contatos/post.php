@@ -1,8 +1,22 @@
-<?php 
+<?php
+  include_once "functions/inserirContatos.php";
+
   if ($acao === "") echo json_encode(["ERRO" => "Caminho não encontrado"]);
 
   if ($acao === "criar") {
     $body = file_get_contents('php://input');
-    print_r($body);
+    $bodyJson = json_decode($body,true);
+
+    $sql = inserirContato($bodyJson);
+
+    $db = DB::connect();
+    $rs = $db->prepare($sql);
+    $exec = $rs->execute();
+
+    if ($exec) {
+      echo json_encode(["dados" => "Contato cadastrado com sucesso."]);
+    } else {
+      echo json_encode(["dados" => "Erro ao cadastrar contato"]);
+    }
   }
 ?>

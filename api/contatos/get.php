@@ -1,5 +1,8 @@
 <?php
-  if ($acao === "" && $params === "") echo json_encode(["ERRO" => "Caminho não encontrado"]);
+  if ($acao === "") {
+    echo json_encode(["ERRO" => "Caminho não encontrado"]);
+    exit;
+  }
 
   if ($acao === "listar" && $params === "") {
     $db = DB::connect();
@@ -11,6 +14,7 @@
       echo json_encode($result);
     } else {
       echo json_encode(["dados" => "Não existem dados de contatos"]);
+      echo header("HTTP/1.1 500 Internal Server Error");
     }
   }
 ?>

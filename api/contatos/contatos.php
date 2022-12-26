@@ -7,5 +7,9 @@
     if ($method === "POST") {
       include_once "post.php";
     }
+
+    if ($method === "DELETE") {
+      include_once "delete.php";
+    }
   }
 ?>

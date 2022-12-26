@@ -14,9 +14,9 @@
     $exec = $rs->execute();
 
     if ($exec) {
-      echo json_encode(["dados" => "Contato cadastrado com sucesso."]);
+      echo json_encode(["contato" => $bodyJson, "mensagem" => "Contato cadastrado com sucesso"]);
     } else {
-      echo json_encode(["dados" => "Erro ao cadastrar contato"]);
+      echo json_encode(["error" => "Erro ao cadastrar contato"]);
     }
   }
 ?>

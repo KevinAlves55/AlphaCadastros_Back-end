@@ -8,7 +8,7 @@
     $result = $rsDados->fetchAll(PDO::FETCH_ASSOC);
 
     if ($result) {
-      echo json_encode(["dados" => $result]);
+      echo json_encode($result);
     } else {
       echo json_encode(["dados" => "Não existem dados de contatos"]);
     }

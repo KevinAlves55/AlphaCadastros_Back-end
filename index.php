@@ -8,13 +8,15 @@
   if (isset($_GET["path"])) {
     $path = explode("/", $_GET["path"]);
   } else {
-    echo "Caminho não existe"; exit;
+    echo "Caminho não existe"; 
+    exit;
   }
 
   if (isset($path[0])) {
     $api = $path[0];
   } else {
-    echo "Caminho não existe"; exit;
+    echo "Caminho não existe"; 
+    exit;
   }
 
   if (isset($path[1])) {

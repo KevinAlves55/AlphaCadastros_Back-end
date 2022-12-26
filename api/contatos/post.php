@@ -7,17 +7,16 @@
   }
 
   if ($acao === "criar") {
-    $body = file_get_contents('php://input');
-    $bodyJson = json_decode($body,true);
+    $body = file_get_contents("php://input");
+    $bodyArray = json_decode($body,true);
 
-    $sql = inserirContato($bodyJson);
-
+    $sql = inserirContato($bodyArray);
     $db = DB::connect();
     $rs = $db->prepare($sql);
     $exec = $rs->execute();
 
     if ($exec) {
-      echo json_encode(["contato" => $bodyJson, "mensagem" => "Contato cadastrado com sucesso"]);
+      echo json_encode(["contato" => $bodyArray, "mensagem" => "Contato cadastrado com sucesso"]);
       echo header("HTTP/1.1 201 Created");
     } else {
       echo json_encode(["error" => "Erro ao cadastrar contato"]);

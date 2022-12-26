@@ -1,10 +1,10 @@
 <?php
-  function inserirContato($bodyJson) {
+  function inserirContato($bodyArray) {
     $sql = "INSERT INTO tblcontatos(";
 
     $contador = 1;
-    foreach (array_keys($bodyJson) as $key) {
-      if (count($bodyJson) > $contador) {
+    foreach (array_keys($bodyArray) as $key) {
+      if (count($bodyArray) > $contador) {
         $sql .= "{$key},";
       } else {
         $sql .= "{$key}";
@@ -15,8 +15,8 @@
     $sql .= ") VALUES (";
 
     $contador = 1;
-    foreach (array_values($bodyJson) as $value) {
-      if (count($bodyJson) > $contador) {
+    foreach (array_values($bodyArray) as $value) {
+      if (count($bodyArray) > $contador) {
         $sql .= "'{$value}',";
       } else {
         $sql .= "'{$value}'";

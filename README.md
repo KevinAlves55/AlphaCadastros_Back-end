@@ -24,7 +24,7 @@
 - [x] Cadastra dados de contatos
 - [x] Deleta dados de contatos
 - [x] Atualiza dados de contatos
-- [x] Lista apenas um registro no banco
+- [x] Lista um registro de acordo com o ID no banco
 
 ### Pré-requisitos
 
@@ -43,6 +43,17 @@ $ git clone <https://github.com/KevinAlves55/AlphaCadastros_Back-end>
 # Arraste a pasta até XAMPP > htdocs
 
 # Inicialize o APACHE no XAMP
+```
+
+```php
+// Dentro da pasta classes > db.class.php Altere as informações de acordo com o Banco local
+
+$local = "";
+$user = "";
+$password = "";
+$base = "";
+
+// Dentro da pasta db abra o arquivo .sql no seu banco e rode todos os scripts na sequência que está no arquivo
 ```
 
 ### 🛠 Tecnologias

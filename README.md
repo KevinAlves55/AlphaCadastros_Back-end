@@ -48,7 +48,7 @@ $ git clone <https://github.com/KevinAlves55/AlphaCadastros_Back-end>
 ```php
 // Dentro da pasta classes > db.class.php Altere as informações de acordo com o Banco local
 
-$local = "";
+$local = "localhost/AlphaCadastros_Back-end";
 $user = "";
 $password = "";
 $base = "";

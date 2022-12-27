@@ -14,9 +14,15 @@
     $db = DB::connect();
     $rs = $db->prepare($sql);
     $exec = $rs->execute();
+    $result = $db->lastInsertId();
+
+    $responseBody = array(
+      ...$bodyArray,
+      "id" => $result
+    );
 
     if ($exec) {
-      echo json_encode(["contato" => $bodyArray, "mensagem" => "Contato cadastrado com sucesso"]);
+      echo json_encode(["contato" => $responseBody, "mensagem" => "Contato cadastrado com sucesso"]);
       echo header("HTTP/1.1 201 Created");
     } else {
       echo json_encode(["error" => "Erro ao cadastrar contato"]);

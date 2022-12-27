@@ -60,5 +60,5 @@ $base = "";
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [PHP](https://www.php.net/docs.php))
+- [PHP](https://www.php.net/docs.php)
 - [MySQL](https://dev.mysql.com/)

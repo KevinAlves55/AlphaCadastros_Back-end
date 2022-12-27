@@ -21,9 +21,9 @@ insert into tblcontatos(nome, email, telefone, dataDeNascimento, profissao, celu
     "2020-12-12 12:12:12",
     "Programador",
     "(11) 99116-5873",
-    true,
-    false,
-    false
+    1,
+    1,
+    1
 );
 
 select * from tblcontatos;
